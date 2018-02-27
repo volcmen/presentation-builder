@@ -1,0 +1,65 @@
+{
+	"name": "presentation-builder",
+	"version": "1.2.0",
+	"dependencies": {
+		"electron-spellchecker": "^1.2.0",
+		"fs-extra": "^5.0.0",
+		"markdown-it": "^8.4.1",
+		"markdown-it-classy": "^0.2.0",
+		"markdown-it-container": "^2.0.0",
+		"markdown-it-modify-token": "^1.0.2",
+		"markdown-it-synapse-table": "^1.0.6",
+		"react": "^16.2.0",
+		"react-dom": "^16.2.0",
+		"react-helmet": "^5.2.0",
+		"react-redux": "^5.0.7",
+		"react-scroll-sync": "^0.4.1",
+		"redux": "^3.7.2",
+		"redux-thunk": "^2.2.0",
+		"reveal.js": "^3.6.0"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.0.0-beta.40",
+		"@babel/node": "^7.0.0-beta.40",
+		"@babel/preset-env": "^7.0.0-beta.40",
+		"@babel/preset-react": "^7.0.0-beta.40",
+		"@babel/preset-stage-0": "^7.0.0-beta.40",
+		"babel-eslint": "^8.2.2",
+		"babel-loader": "^8.0.0-beta.2",
+		"babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+		"electron": "^1.8.2",
+		"electron-packager": "^11.0.1",
+		"eslint": "^4.18.1",
+		"eslint-config-airbnb": "^16.1.0",
+		"eslint-plugin-import": "^2.9.0",
+		"eslint-plugin-jsx-a11y": "^6.0.3",
+		"eslint-plugin-react": "^7.7.0",
+		"file-loader": "^1.1.10",
+		"json-loader": "^0.5.7",
+		"webpack": "^3.10.0",
+		"webpack-bundle-analyzer": "^2.11.0"
+	},
+	"license": "VLC",
+	"main": "lib/main.js",
+	"private": true,
+	"babel": {
+		"presets": [
+			"@babel/preset-env",
+			"@babel/preset-stage-0"
+		],
+		"ignore": [
+			"node_modules",
+			"dist"
+		]
+	},
+	"scripts": {
+		"clean": "rm -rf dist",
+		"package": "npm run prod && cd dist && electron-packager . editor --platform=linux --arch=x64 --out=build",
+		"package-overwrite": "electron-packager . editor --overwrite",
+		"package-overwrite-asar": "electron-packager . editor --overwrite --asar",
+		"package-all": "electron-packager . editor --platform=all --arch=all --out=dist",
+		"start": "npm run prod && cd dist && electron .",
+		"dev": "webpack --watch",
+		"prod": "babel-node tools/run build"
+	}
+}
