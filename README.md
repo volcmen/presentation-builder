@@ -1,4 +1,17 @@
-# REveal.js Markdown Editor
+# Reveal.js Markdown Editor
+
+## This is Electron app to crete presentations by using [reveal.js](https://github.com/hakimel/reveal.js), react, redux frameworks.
+### After save you will get html and js file of you presentation.
+
+#### Folders
+```
+/lib - main folder.
+  /customThemes - themes.
+  /front - front-end.
+  /i18n - languages.
+  /images.
+/test - contains tests.
+```
 
 
 ## Syntax
